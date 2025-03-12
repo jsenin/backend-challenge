@@ -41,4 +41,4 @@ shell:
 	docker compose exec -it $(APP_CONTAINER) /bin/bash
 
 tests:
-	docker compose exec -it $(APP_CONTAINER) pytest
+	docker compose exec -it $(APP_CONTAINER) pytest -v
