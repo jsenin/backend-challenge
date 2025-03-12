@@ -11,6 +11,12 @@ class AssistanceRequestByMail:
         mail_client.send(mailto='pricing@fake.com', mail_from='bot@landbot.io', subject='Assistance request',
                          message=message)
 
+class AssistanceRequestBySlack:
+    @staticmethod
+    def send(message:str):
+        slack_client = factory.build_slack_client()
+        slack_client.send_message('sales', message=message)
+
 @fastapi.post("/request_assistance")
 def post(assistance_request: AssistanceRequest):
     if assistance_request.topic == 'Pricing':
@@ -18,6 +24,5 @@ def post(assistance_request: AssistanceRequest):
         return {"message": "Requested!"}
 
     if assistance_request.topic == 'Sales':
-        slack_client = factory.build_slack_client()
-        slack_client.send_message('sales', assistance_request.description)
+        AssistanceRequestBySlack.send(assistance_request.description)
         return {"message": "Requested!"}
