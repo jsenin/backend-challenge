@@ -1,10 +1,7 @@
-import re
-import json
 import requests
 from fastapi.testclient import TestClient
 
 from app import main
-import httpretty
 
 client = TestClient(main.fastapi)
 
