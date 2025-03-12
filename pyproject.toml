@@ -6,9 +6,9 @@ authors = [
     {name = "Jorge Senin",email = "jorge@senin.org"}
 ]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = [
-    "fastapi[standard]", "pytest", "requests"
+    "fastapi[standard]", "pytest", "requests", "slack_sdk", "httpretty"
 ]
 
 [tool.setuptools]
