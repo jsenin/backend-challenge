@@ -1,0 +1,18 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - .:/src
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - 8000:8000
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
