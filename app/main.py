@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 
-import app.settings
 from app.assistanace_request import AssistanceRequest
-from app.infrastructure import factory, mail_client
+from app.infrastructure import factory
 
 fastapi = FastAPI()
 
@@ -10,8 +9,8 @@ fastapi = FastAPI()
 @fastapi.post("/request_assistance")
 def post(assistance_request: AssistanceRequest):
     if assistance_request.topic == 'Pricing':
-        mail = mail_client.MailClient(app.settings.mail_settings())
-        mail.send(mailto='pricing@fake.com', mail_from='bot@landbot.io', subject='Assistance request',
+        mail_client = factory.build_mail_client()
+        mail_client.send(mailto='pricing@fake.com', mail_from='bot@landbot.io', subject='Assistance request',
                   message=assistance_request.description)
         return {"message": "Requested!"}
 
