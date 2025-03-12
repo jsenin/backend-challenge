@@ -50,3 +50,8 @@ There's a shell quick access executing
 make shell
 ```
 
+### Mailpit
+I use mailpit for e2e testing and ensure that the mails are sent 
+```
+http://localhost:8025
+```
