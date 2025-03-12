@@ -1,9 +1,9 @@
 import requests
 from fastapi.testclient import TestClient
 
-from src import main
+from app import main
 
-client = TestClient(main.app)
+client = TestClient(main.fastapi)
 
 def test_request_help_to_pricing_sends_an_email():
     response = client.post(

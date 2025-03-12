@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: development
+
     volumes:
       - .:/src
     environment:

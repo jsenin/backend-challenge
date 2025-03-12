@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [tool.setuptools]
-py-modules = ['src']
+py-modules = ['app']
 
 [build-system]
 requires = ["setuptools >= 61.0"]

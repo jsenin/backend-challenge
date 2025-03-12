@@ -1,5 +1,5 @@
 # Variables
-DOCKER_IMAGE = "backend-chanllege"
+DOCKER_IMAGE = "backend-challenge"
 APP_CONTAINER = app
 PROJECT_DIR = $(shell pwd)
 
@@ -12,7 +12,7 @@ release:
 
 build:
 	@echo "Starting FastAPI application..."
-	docker compose build
+	docker compose build --no-cache app
 	@echo "FastAPI is running"
 
 up:
