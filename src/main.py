@@ -3,6 +3,6 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get("/request_assistance")
-def get():
+@app.post("/request_assistance")
+def post():
     return {"message": "Requested!"}
