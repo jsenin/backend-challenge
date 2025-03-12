@@ -25,3 +25,28 @@ Pricing  | Email
 - Be coded as you do daily (libraries, style, testing...).
 - Be easy to grow with new functionality.
 - Be a dockerized app.
+
+
+## Howto
+
+# Running
+There's a Makefile to do common tasks
+
+Start project
+```bash
+make up
+```
+It starts a fastapi server at  http://0.0.0.0:8000
+
+Also there's a `make up-d` to start docker compose at background
+
+Stop the project
+```bash
+make down
+```
+
+There's a shell quick access executing 
+```
+make shell
+```
+
