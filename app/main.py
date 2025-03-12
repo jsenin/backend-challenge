@@ -15,6 +15,6 @@ def post(assistance_request: AssistanceRequest):
         return {"message": "Requested!"}
 
     if assistance_request.topic == 'Sales':
-        slack_client = factory.build_slack_client('faketoken')
+        slack_client = factory.build_slack_client()
         slack_client.send_message('sales', assistance_request.description)
         return {"message": "Requested!"}
