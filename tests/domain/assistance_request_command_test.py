@@ -1,10 +1,9 @@
 from unittest.mock import Mock
 
 from app.domain.assistance_request_command import AssistanceRequestCommand
+from app.domain.assistance_request_command_handler import AssistanceRequestCommandHandler
 from app.infrastructure.delivery_strategies.mail_delivery_strategy import MailDeliveryStrategy
 from app.infrastructure.delivery_strategies.slack_delivery_strategy import SlackDeliveryStrategy
-
-from app.main import  AssistanceRequestCommandHandler
 
 
 def test_request_assistance_to_pricing_sends_and_email():
