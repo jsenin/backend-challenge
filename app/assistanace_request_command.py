@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 
-
-class AssistanceRequest(BaseModel):
+class AssistanceRequestCommand(BaseModel):
     topic: str
     description: str
