@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 
-from app.assistanace_request_command import AssistanceRequestCommand
+from app.domain.assistance_request_command import AssistanceRequestCommand
 from app.main import MailDeliveryStrategy, AssistanceRequestCommandHandler, \
      SlackDeliveryStrategy
 
