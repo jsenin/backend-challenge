@@ -50,6 +50,19 @@ There's a shell quick access executing
 make shell
 ```
 
+Run tests with 
+```
+make tests
+```
+
+Manual tests:
+```bash
+curl --request POST \
+  --url http://localhost:8000/request_assistance \
+  --header 'Content-Type: application/json ' \
+  --data '{"topic": "Pricing", "description": "hola"}'
+```
+
 ### Mailpit
 I use mailpit for e2e testing and ensure that the mails are sent 
 ```
