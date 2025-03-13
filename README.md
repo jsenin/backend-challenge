@@ -108,3 +108,10 @@ A release docker image can be build using. It will use the git short commit to l
 ```
 make release
 ```
+
+### Suggestions/ideas 
+* Use semantic release https://www.npmjs.com/package/semantic-release
+* Use pre-commit and black to linter the code before commiting it
+* Research how to hook slack calls for e2e tests
+* Use event sourcing for high performance. CommandHandler should dispatch an event to que queue and a EventHandler should handle the action to perform
+* Add logs with Logger
