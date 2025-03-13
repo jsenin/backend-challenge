@@ -1,13 +1,13 @@
 # Variables
-DOCKER_IMAGE = "backend-challenge"
-APP_CONTAINER = app
-PROJECT_DIR = $(shell pwd)
-
+DOCKER_IMAGE=backend-challenge
+APP_CONTAINER=app
+PROJECT_DIR=$(shell pwd)
+GIT_HASH=$(shell git rev-parse --short HEAD)
 .PHONY: release build up up-d down restart clear shell tests
 
 release:
-	@echo "Building Docker image..."
-	docker build -t $(DOCKER_IMAGE) --target production .
+	@echo "Building Release image..."
+	docker build -t "${DOCKER_IMAGE}:${GIT_HASH}" --target production .
 	@echo "Docker image built."
 
 build:

@@ -63,8 +63,48 @@ curl --request POST \
   --data '{"topic": "Pricing", "description": "hola"}'
 ```
 
+Settings are stored at  `config/config.ini`
+```
+[MAIL]
+host = mailpit
+port = 1025
+user = your-email@example.com
+password = your-password
+
+[SLACK]
+api_token = 12341234123
+
+[PRICING]
+mailto = pricing@landbot.io
+mail_from = assistance@lanbot.io
+subject = assisntace request
+
+[SALES]
+slack_channel = pricing-assistance
+```
+
+Environment values are allowed for service client configurations. If are not present, then use the config one:
+```python
+def mail_settings():
+    smtp_server = os.getenv("MAIL_HOST") or config["MAIL"]["host"]
+    smtp_port = os.getenv("MAIL_PORT") or config["MAIL"]["port"]
+    username = os.getenv("MAIL_USER") or config["MAIL"]["user"]
+    password = os.getenv("MAIL_PASSWORD") or config["MAIL"]["password"]
+
+    return MailSettings(smtp_server=smtp_server, smtp_port=int(smtp_port), username=username, password=password)
+
+def slack_settings():
+    api_token = os.getenv("SLACK_API_TOKEN") or config["SLACK"]["api_token"]
+    return SlackSettings(token=api_token)
+```
+
 ### Mailpit
 I use mailpit for e2e testing and ensure that the mails are sent 
+Mailpit website is exposed at http://localhost:8025
+
+### Release
+
+A release docker image can be build using. It will use the git short commit to label the image version
 ```
-http://localhost:8025
+make release
 ```
