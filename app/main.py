@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 from app.domain.assistance_request_command import AssistanceRequestCommand
 from app.domain.assistance_request_command_handler import AssistanceRequestCommandHandler
-from app.domain.delivery_strategies import factory
+from app.infrastructure.delivery_strategies import factory
 
 fastapi = FastAPI()
 
