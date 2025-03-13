@@ -1,6 +1,7 @@
 import smtplib
 
-from app.settings import MailSettings
+from app.infrastructure.settings import MailSettings
+
 
 class MailClient:
     def __init__(self, settings: MailSettings):

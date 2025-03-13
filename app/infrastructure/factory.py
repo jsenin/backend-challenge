@@ -1,6 +1,6 @@
 from slack_sdk import WebClient
 
-from app import settings
+from app.infrastructure import settings
 from app.infrastructure.mail_client import MailClient
 from app.infrastructure.slack_client import SlackClient
 
