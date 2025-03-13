@@ -11,7 +11,7 @@ RUN pip install -e .
 
 EXPOSE 8000
 
-CMD ["fastapi", "run", "app/main.py", "--port", "8000", "--reload"]
+CMD ["fastapi", "run", "web/main.py", "--port", "8000", "--reload"]
 
 FROM base AS production
 
@@ -23,4 +23,4 @@ RUN pip install .
 
 EXPOSE 8000
 
-CMD ["fastapi", "run", "app/main.py", "--port", "8000", "--reload"]
+CMD ["fastapi", "run", "web/main.py", "--port", "8000", "--reload"]
